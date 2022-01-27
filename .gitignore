@@ -158,7 +158,7 @@ Thumbs.db
 # AppVeyor
 /tools/cake/
 /_artifacts/
-
+.sonarqube/
 # Cake
 /tools/Addins/*
 packages.config.md5sum
