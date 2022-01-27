@@ -26,7 +26,7 @@ namespace NzbDrone.SysTray
 
         public void Start()
         {
-            _trayMenu.Items.Add(new ToolStripMenuItem("Launch Browser", null, LaunchBrowser));
+            _trayMenu.Items.Add(new ToolStripMenuItem("Launch Browsers", null, LaunchBrowser));
             _trayMenu.Items.Add(new ToolStripSeparator());
             _trayMenu.Items.Add(new ToolStripMenuItem("Exit", null, OnExit));
 
@@ -56,6 +56,7 @@ namespace NzbDrone.SysTray
 
         protected override void OnClosing(CancelEventArgs e)
         {
+            //FIXIT
             DisposeTrayIcon();
         }
 

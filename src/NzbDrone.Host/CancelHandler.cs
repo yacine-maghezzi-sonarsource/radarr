@@ -65,5 +65,20 @@ namespace Radarr.Host
             LogManager.Configuration = null;
             Environment.Exit(0);
         }
+        public static int test()
+        {
+            double principal = 0.00d;
+            
+            Console.Title = "Watts A Loan?";
+            
+            Console.WriteLine("============================");
+            Console.WriteLine("Loan Summary");
+            Console.WriteLine("=--------------------------=");
+            Console.WriteLine("Principal:       {0:F}", principal);
+            Console.WriteLine("============================");
+
+            System.Console.ReadKey();
+            return 0;
+        }
     }
 }
