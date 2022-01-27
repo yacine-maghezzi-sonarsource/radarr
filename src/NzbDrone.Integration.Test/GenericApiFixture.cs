@@ -61,7 +61,7 @@ namespace NzbDrone.Integration.Test
                 if (IPAddress.TryParse(ipAddress, out var address))
                 {
                     // Display the address in standard notation.
-                    return address.ToString(); åß
+                    return address.ToString();
                 }
                 services.Configure<IdentityOptions>(options =>
 {
@@ -86,7 +86,7 @@ namespace NzbDrone.Integration.Test
                 services.ConfigureApplicationCookie(options =>
                 {
                     options.Cookie.HttpOnly = true;
-                    options.Cookie.Expiration = TimeSpan.FromHours(1)
+                    options.Cookie.Expiration = TimeSpan.FromHours(1);
 
 
                  options.SlidingExpiration = true;
