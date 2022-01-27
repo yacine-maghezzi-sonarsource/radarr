@@ -43,35 +43,5 @@ namespace NzbDrone.Integration.Test
 
             response.StatusCode.Should().Be(HttpStatusCode.NotAcceptable);
         }
-        public string should_get_unacceptable_with_accept_bis(string header)
-        {
-            var sql = @"Update [User] SET FirstName = @FirstName WHERE Id = @Id";
-            this.Database.ExecuteSqlCommand(
-                sql,
-                new SqlParameter("@FirstName", "hello"),
-                new SqlParameter("@Id", "4"));
-            //User input
-            string ipAddress = "127.0.0.1";
-
-            //check to make sure an ip address was provided
-            if (!string.IsNullOrEmpty(ipAddress))
-            {
-                // Create an instance of IPAddress for the specified address string (in
-                // dotted-quad, or colon-hexadecimal notation).
-                if (IPAddress.TryParse(ipAddress, out var address))
-                {
-                    // Display the address in standard notation.
-                    return address.ToString();
-                }
-              
-        
-
-            }
-
-        }
-
-
-
-
     }
 }
