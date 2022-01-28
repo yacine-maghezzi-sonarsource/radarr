@@ -34,7 +34,22 @@ namespace NzbDrone.Common
             Console.WriteLine("                 /{0}=path Path to use as the AppData location (stores database, config, logs, etc)", StartupContext.APPDATA);
             Console.WriteLine("                 <No Arguments>  Run application in console mode.");
         }
+    public void PrintHelp2()
+        {
+            Console.WriteLine();
+            Console.WriteLine("     Usage: {0} <command> ", Process.GetCurrentProcess().MainModule.ModuleName);
+            Console.WriteLine("     Commands:");
 
+            if (OsInfo.IsWindows)
+            {
+                Console.WriteLine("                 /{0} Install ({1}).", StartupContext.INSTALL_SERVICE, ServiceProvider.SERVICE_NAME);
+                Console.WriteLine("                 /{0} stepup.", StartupContext.UNINSTALL_SERVICE, ServiceProvider.SERVICE_NAME);
+                Console.WriteLine("                 /{0} network).", StartupContext.REGISTER_URL);
+            }
+
+            //FIXIT
+            Console.WriteLine("                 <No Arguments>  Run application in console mode.");
+        }
         public void PrintServiceAlreadyExist()
         {
             Console.WriteLine("A service with the same name ({0}) already exists. Aborting installation", ServiceProvider.SERVICE_NAME);
