@@ -76,9 +76,9 @@ namespace NzbDrone.Core.Download
                     _downloadService.DownloadReport(remoteMovie);
                     grabbed.Add(report);
                 }
-                catch (ReleaseUnavailableException)
+                catch (ReleaseUnavailableException ex)
                 {
-                    _logger.Warn("Failed to download release from indexer, no longer available. " + remoteMovie);
+                    _logger.Warn(ex, "Failed to download release from indexer, no longer available. " + remoteMovie);
                     rejected.Add(report);
                 }
                 catch (Exception ex)

@@ -54,7 +54,7 @@ namespace NzbDrone.Core.Datastore.Migration
                     }
                     catch (InvalidCastException e)
                     {
-                        _logger.Debug("Language field not found in Profiles, using English as default." + e.Message);
+                        _logger.Debug(e, "Language field not found in Profiles, using English as default.");
                     }
 
                     profileLanguages[profileId] = movieLanguage;

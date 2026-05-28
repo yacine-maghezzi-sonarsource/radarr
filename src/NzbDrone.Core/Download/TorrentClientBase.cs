@@ -78,7 +78,7 @@ namespace NzbDrone.Core.Download
                             throw;
                         }
 
-                        _logger.Debug("Torrent download failed, trying magnet. ({0})", ex.Message);
+                        _logger.Debug(ex, "Torrent download failed, trying magnet. ({0})", ex.Message);
                     }
                 }
 
@@ -109,7 +109,7 @@ namespace NzbDrone.Core.Download
                             throw new ReleaseDownloadException(remoteMovie.Release, "Magnet not supported by download client. ({0})", ex.Message);
                         }
 
-                        _logger.Debug("Magnet not supported by download client, trying torrent. ({0})", ex.Message);
+                        _logger.Debug(ex, "Magnet not supported by download client, trying torrent. ({0})", ex.Message);
                     }
                 }
 
