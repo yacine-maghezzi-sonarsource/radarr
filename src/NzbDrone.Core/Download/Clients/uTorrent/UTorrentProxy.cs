@@ -216,7 +216,7 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
             {
                 if (ex.Response.StatusCode == HttpStatusCode.BadRequest || ex.Response.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    _logger.Debug("Authentication required, logging in.");
+                    _logger.Debug(ex, "Authentication required, logging in.");
 
                     AuthenticateClient(requestBuilder, settings, true);
 
