@@ -57,9 +57,9 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 {
                     Proxy.SetTorrentLabel(downloadClientItem.DownloadId.ToLower(), Settings.MovieImportedCategory, Settings);
                 }
-                catch (DownloadClientException)
+                catch (DownloadClientException ex)
                 {
-                    _logger.Warn("Failed to set post-import torrent label \"{0}\" for {1} in qBittorrent. Does the label exist?", Settings.MovieImportedCategory, downloadClientItem.Title);
+                    _logger.Warn(ex, "Failed to set post-import torrent label \"{0}\" for {1} in qBittorrent. Does the label exist?", Settings.MovieImportedCategory, downloadClientItem.Title);
                 }
             }
         }
