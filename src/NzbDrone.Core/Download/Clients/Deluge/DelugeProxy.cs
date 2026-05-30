@@ -262,7 +262,7 @@ namespace NzbDrone.Core.Download.Clients.Deluge
             {
                 if (ex.Response.StatusCode == HttpStatusCode.RequestTimeout)
                 {
-                    _logger.Debug("Deluge timeout during request, daemon connection may have been broken. Attempting to reconnect.");
+                    _logger.Debug(ex, "Deluge timeout during request, daemon connection may have been broken. Attempting to reconnect.");
                     return new JsonRpcResponse<TResult>()
                     {
                         Error = JToken.Parse("{ Code = 2 }")
