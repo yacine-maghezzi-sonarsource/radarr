@@ -58,7 +58,7 @@ namespace NzbDrone.Core.Download.Clients.NzbVortex
             }
             catch (DownloadClientException ex)
             {
-                _logger.Warn("Couldn't get download queue. {0}", ex.Message);
+                _logger.Warn(ex, "Couldn't get download queue. {0}", ex.Message);
                 return Enumerable.Empty<DownloadClientItem>();
             }
 

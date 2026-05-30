@@ -271,7 +271,7 @@ namespace NzbDrone.Core.Download.Clients.UTorrent
                 {
                     if (ex.Response.StatusCode == HttpStatusCode.Unauthorized)
                     {
-                        _logger.Debug("uTorrent authentication failed.");
+                        _logger.Debug(ex, "uTorrent authentication failed.");
                         throw new DownloadClientAuthenticationException("Failed to authenticate with uTorrent.");
                     }
 

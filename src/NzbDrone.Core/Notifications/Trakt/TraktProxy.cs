@@ -83,9 +83,9 @@ namespace NzbDrone.Core.Notifications.Trakt
                     return response.Resource.User.Ids.Slug;
                 }
             }
-            catch (HttpException)
+            catch (HttpException ex)
             {
-                _logger.Warn($"Error refreshing trakt access token");
+                _logger.Warn(ex, $"Error refreshing trakt access token");
             }
 
             return null;
